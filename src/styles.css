@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: Tahoma, "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  --font-serif: "Noto Serif SC", SimSun, "Songti SC", serif;
+  --color-desk: #008080;
+  --color-face: #c0c0c0;
+  --color-ink: #000000;
+  --color-muted: #404040;
+  --color-paper: #ffffff;
+  --color-title: #000080;
+  --color-title2: #1084d0;
+  --color-hilite: #000080;
+  --color-hilite-fg: #ffffff;
+  --color-sun: #ffffff;
+  --color-shadow: #808080;
+  --color-dark: #000000;
+}
+
+@layer base {
+  html,
+  body {
+    background: var(--color-desk);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 13px;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  textarea,
+  input,
+  select {
+    font: inherit;
+  }
+}
+
+@utility win-out {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--color-sun) var(--color-dark) var(--color-dark) var(--color-sun);
+  box-shadow:
+    inset -1px -1px 0 var(--color-shadow),
+    inset 1px 1px 0 var(--color-sun);
+}
+
+@utility win-in {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--color-shadow) var(--color-sun) var(--color-sun) var(--color-shadow);
+  box-shadow: inset 1px 1px 0 var(--color-dark);
+  background: var(--color-paper);
+}
+
+@utility win-btn {
+  min-height: 28px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--color-sun) var(--color-dark) var(--color-dark) var(--color-sun);
+  background: var(--color-face);
+  padding: 2px 12px;
+  box-shadow: inset -1px -1px 0 var(--color-shadow);
+}
+
+@utility win-btn-pressed {
+  border-color: var(--color-dark) var(--color-sun) var(--color-sun) var(--color-dark);
+  box-shadow: inset 1px 1px 0 var(--color-shadow);
+}
